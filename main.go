@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"net"
 	"net/http"
 	"os"
 	"text/template"
@@ -14,9 +16,11 @@ type PageData struct {
 var tpl = template.Must(template.ParseFiles("index.html"))
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
+	host, _, _ := net.SplitHostPort(r.RemoteAddr)
+	fmt.Sprintln(host)
 	data := PageData{
 		PageTitle: "NETBLIX",
-		CurrentIp: "10.0.0.1",
+		CurrentIp: host,
 	}
 	tpl.Execute(w, data)
 }

@@ -29,7 +29,9 @@
 
 <div class="splash-container">
     <div class="splash">
-        <h1 class="splash-head">YOUR IP: {{ .CurrentIp }}</h1>
+        <h1 class="splash-head">
+            YOUR IP: <span id="ipAddr">{{ .CurrentIp }}</span>
+        </h1>
         <p class="splash-subhead">
             This is your current visible IP address.
         </p>

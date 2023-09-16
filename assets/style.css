@@ -110,17 +110,21 @@ a.pure-button-primary {
 
 .home-menu .pure-menu-heading {
     color: #db0000;
-    font-weight: bold;
-    /* font-weight: 400; */
-    font-size: 120%;
+    font-weight: 800;
+    font-size: 150%;
 }
 
 .home-menu .pure-menu-selected a {
+    color:  #fff!important;
+}
+
+#ipAddr{
     color:  #db0000!important;
+    font-weight: 700;
 }
 
 .home-menu a {
-    color: #fff;
+    color: #555;
 }
 .home-menu li a:hover,
 .home-menu li a:focus {
@@ -249,9 +253,10 @@ a.pure-button-primary {
     .home-menu {
         text-align: left;
     }
-        .home-menu ul {
-            float: right;
-        }
+
+    /* .home-menu ul {
+        float: right;
+    } */
 
     /* We increase the height of the splash-container */
 /*    .splash-container {
