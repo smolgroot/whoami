@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <title>{{ .PageTitle }}</title>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/style.css">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">{{ .PageTitle }}</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Explore</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">TV Shows</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Movies</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">News and Popular</a></li>
+            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Your Account</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">YOUR IP: {{ .CurrentIp }}</h1>
+        <p class="splash-subhead">
+            This is your current visible IP address.
+        </p>
+        <p>
+            <a class="pure-button pure-button-primary" href="#movie">
+                <i class="fa fa-play fa-lg"></i> PLAY
+            </a>
+        </p>
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="content">
+        <h2 id="movie" class="content-head is-center">Some Cool Movie</h2>
+        
+        <div class="pure-g">
+            <div class="l-box-lrg is-center pure-u-1">
+                <!-- <iframe id="ytplayer" type="text/html" width="1280" height="720"
+                src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+                frameborder="0"></iframe> -->
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/WhWc3b3KhnY?si=UyzOraZJvVFlucqd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+    </div>
+
+    <div class="footer l-box is-center">
+        Be sure to not use any VPN or anti GeoIP blocking services
+    </div>
+
+</div>
+
+</body>
+</html>
