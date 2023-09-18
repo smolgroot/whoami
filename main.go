@@ -36,5 +36,6 @@ func main() {
 
 	mux.HandleFunc("/", indexHandler)
 	mux.Handle("/assets/", http.StripPrefix("/assets/", fs))
+	fmt.Printf("Listening on http://0.0.0.0:%v...", port)
 	http.ListenAndServe(":"+port, mux)
 }
