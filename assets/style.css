@@ -46,7 +46,16 @@ label {
     text-align: center;
 }
 
-
+.alert-box {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: rgb(223, 168, 50);
+    padding: 5px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20rem;
+}
 
 /*
  * -- PURE FORM STYLES --
@@ -192,7 +201,7 @@ a.pure-button-primary {
     width: 100%;
     min-height: 12%;
     z-index: 2;
-    background: white;
+    background: #222;
 
 }
 
@@ -203,7 +212,7 @@ a.pure-button-primary {
 
 /* This is the class used for the main content headers (<h2>) */
 .content-head {
-    font-weight: 400;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin: 2em 0 1em;
@@ -230,7 +239,8 @@ a.pure-button-primary {
 
 /* This is the class used for the footer */
 .footer {
-    background: #111;
+    background: #eee;
+    color: #000;
     position: fixed;
     bottom: 0;
     width: 100%;

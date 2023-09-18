@@ -6,9 +6,9 @@
     <meta name="description" content="A layout example that shows off a responsive product landing page.">
     <title>{{ .PageTitle }}</title>
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="/assets/style.css">    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
             This is your current visible IP address.
         </p>
         <p>
-            <a class="pure-button pure-button-primary" href="#movie">
+            <a class="pure-button pure-button-primary" style="color: #fff" href="#movie">
                 <i class="fa fa-play fa-lg"></i> PLAY
             </a>
         </p>
@@ -48,14 +48,18 @@
         <h2 id="movie" class="content-head is-center">Some Cool Movie</h2>
         
         <div class="pure-g">
-            <div class="l-box-lrg is-center pure-u-1">
-                <!-- <iframe id="ytplayer" type="text/html" width="1280" height="720"
-                src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-                frameborder="0"></iframe> -->
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/WhWc3b3KhnY?si=UyzOraZJvVFlucqd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {{ if or (eq .CurrentIp "127.0.0.1") (eq .CurrentIp "::1") }}
+                <div class="l-box-lrg is-center pure-u-1">
+                    <div class="alert-box">
+                        Oh no! This title currently isn't available to watch in your country.
+                    </div>
+                </div>
+            {{ else }}
+                <div class="l-box-lrg is-center pure-u-1">
+                    <iframe width="1280" height="720" src="https://www.youtube.com/embed/WhWc3b3KhnY?si=UyzOraZJvVFlucqd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            {{ end }}
         </div>
-        
-    </div>
 
     <div class="footer l-box is-center">
         Be sure to not use any VPN or anti GeoIP blocking services
